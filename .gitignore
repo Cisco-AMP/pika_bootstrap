@@ -1,3 +1,4 @@
 env
 .idea
-
+pip-selfcheck.json
+.Python
