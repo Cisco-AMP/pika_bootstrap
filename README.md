@@ -18,6 +18,7 @@ Then, run in a python virtualenv
 ```
 git clone git@github.com:samsonnguyen/pika_bootstrap.git
 cd pika_bootstrap
+python -m virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
 python consumer.py
