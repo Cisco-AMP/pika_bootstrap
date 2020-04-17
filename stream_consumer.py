@@ -52,7 +52,7 @@ class StreamConsumer(object):
     def start_consuming(self):
         self._channel = self._connection.channel()
         self._channel.queue_declare(self._queue_name, passive=True)
-        self._channel.basic_consume(self.on_message, self._queue_name)
+        self._channel.basic_consume(queue=self._queue_name, on_message_callback=self.on_message)
         logger.info('Connected. Starting to consume.')
         self._channel.start_consuming()
 
