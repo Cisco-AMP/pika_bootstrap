@@ -2,3 +2,5 @@ env
 .idea
 pip-selfcheck.json
 .Python
+stream.yml
+__pycache__

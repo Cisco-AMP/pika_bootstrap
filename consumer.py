@@ -1,6 +1,8 @@
 from stream_consumer import StreamConsumer
 from logger import logger
 import json
+import io
+import yaml
 
 class Consumer:
     def start_streaming(self, connection_data):
@@ -17,10 +19,7 @@ class Consumer:
         decoded_event = json.loads(event_json)
         logger.info('Publishing event {}'.format(decoded_event))
 
-Consumer().start_streaming({
-    'user_name': '',
-    'password': '',
-    'host': '',
-    'port': '443',
-    'queue_name': ''
-})
+
+config = yaml.load(io.open('stream.yml'), Loader=yaml.FullLoader)
+
+Consumer().start_streaming(config)

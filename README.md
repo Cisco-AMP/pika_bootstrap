@@ -11,13 +11,21 @@ Just implement `Consumer.__on_event_callback` and away you go.
 
 # Usage
 
-Modify consumer.py to fit your needs, and define the credentials for your AMQP stream
+```
+git@github.com:Cisco-AMP/pika_bootstrap.git
+cd pika_bootstrap
+```
+
+Copy the `stream_template.yml` to `stream.yml` and define the credentials for your AMQP stream
+
+```
+cp stream_configs_template.yml stream_configs.yml
+vi stream_configs.yml
+```
 
 Then, run in a python virtualenv
 
 ```
-git clone git@github.com:samsonnguyen/pika_bootstrap.git
-cd pika_bootstrap
 python -m virtualenv env
 source env/bin/activate
 pip install -r requirements.txt
